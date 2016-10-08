@@ -1,0 +1,1 @@
+# Quick example demonstration cloud and local configurations of Oracle datasources
