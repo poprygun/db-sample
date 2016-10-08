@@ -47,10 +47,6 @@ public class DbConfig {
                 , @Value("${ds2.max.pool.size}") int maxPoolSize
                 , @Value("${ds2.max.wait.time}") int maxWaitTime) {
             Cloud cloud = cloudFactory.getCloud();
-            return getDataSource(minPoolSize, maxPoolSize, maxWaitTime, cloud);
-        }
-
-        private DataSource getDataSource(@Value("${ds2.min.pool.size}") int minPoolSize, @Value("${ds2.max.pool.size}") int maxPoolSize, @Value("${ds2.max.wait.time}") int maxWaitTime, Cloud cloud) {
             return cloud.getServiceConnector("two-db",
                     DataSource.class, getServiceConnectorConfig(minPoolSize, maxPoolSize, maxWaitTime));
         }
